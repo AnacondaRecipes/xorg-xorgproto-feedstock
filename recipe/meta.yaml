@@ -16,7 +16,7 @@ source:
     - 0001-windows-fds-bits.patch  # [win]
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
