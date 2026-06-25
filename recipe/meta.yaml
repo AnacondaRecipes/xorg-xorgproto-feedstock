@@ -1,11 +1,10 @@
 {% set xorg_name = "xorgproto" %}
 {% set xorg_category = "proto" %}
-{% set name = "xorg-" ~ xorg_name %}
 {% set version = "2024.1" %}
 {% set sha256 = "372225fd40815b8423547f5d890c5debc72e88b91088fbfb13158c20495ccb59" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ "xorg-" ~ xorg_name|lower }}
   version: {{ version }}
 
 source:
@@ -26,11 +25,11 @@ requirements:
     - make  # [unix]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
-    - meson   # [win]
+    - meson   # [win]  analint: python_build_tools_in_host
     - ninja   # [win]
     - python  # [win]
   host:
-    - xorg-util-macros  # [unix]
+    - xorg-util-macros 1.19  # [unix]
   run_constrained:
     - xorg-applewmproto <0.0.0a
     - xorg-bigreqsproto <0.0.0a
@@ -75,6 +74,9 @@ about:
   license_family: MIT
   license_file: licenses/
   summary: X.org protocol headers
+  description: |
+    xorgproto provides the combined X.Org X11 protocol header files and
+    pkg-config metadata previously split across individual *proto packages.
 
 extra:
   recipe-maintainers:
