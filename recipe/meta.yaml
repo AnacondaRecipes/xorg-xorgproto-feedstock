@@ -11,6 +11,8 @@ package:
 source:
   url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-windows-fd-set.patch  # [win]
 
 build:
   number: 2
