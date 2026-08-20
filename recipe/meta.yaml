@@ -27,9 +27,7 @@ requirements:
     - meson >=0.56.0  # [win]  analint: python_build_tools_in_host
     - ninja-base  # [win]
     - python  # [win]
-    - pkg-config  # [win]
   host:
-    - python
     - xorg-util-macros ==1.19  # [unix]
   run_constrained:
     - xorg-applewmproto <0.0.0a
