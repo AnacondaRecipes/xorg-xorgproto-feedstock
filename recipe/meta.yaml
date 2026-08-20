@@ -1,20 +1,19 @@
-{% set xorg_name = "xorgproto" %}
+{% set name = "xorg-xorgproto" %}
 {% set xorg_category = "proto" %}
-{% set version = "2024.1" %}
-{% set sha256 = "372225fd40815b8423547f5d890c5debc72e88b91088fbfb13158c20495ccb59" %}
+{% set version = "2025.1" %}
 
 package:
-  name: {{ "xorg-" ~ xorg_name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.xz
-  sha256: {{ sha256 }}
+  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ name.split('-')[1] }}-{{ version }}.tar.xz
+  sha256: 56898c716c0578df8a2d828c9c3e5c528277705c0484381a81960fe1a67668e8
   patches:
     - 0001-windows-fd-set.patch  # [win]
 
 build:
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage('xorg-xorgproto') }}
 
@@ -25,11 +24,13 @@ requirements:
     - make  # [unix]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
-    - meson   # [win]  analint: python_build_tools_in_host
+    - meson >=0.56.0  # [win]  analint: python_build_tools_in_host
     - ninja-base  # [win]
     - python  # [win]
+    - pkg-config  # [win]
   host:
-    - xorg-util-macros 1.19  # [unix]
+    - python
+    - xorg-util-macros ==1.19  # [unix]
   run_constrained:
     - xorg-applewmproto <0.0.0a
     - xorg-bigreqsproto <0.0.0a
