@@ -130,74 +130,6 @@ for %%f in (
     include\X11\fonts\fsmasks.h
     include\X11\keysym.h
     include\X11\keysymdef.h
-    share\doc\bigreqsproto\bigreq.xml
-    share\doc\fontsproto\fsproto.xml
-    share\doc\kbproto\XKBproto-1.svg
-    share\doc\kbproto\XKBproto-10.svg
-    share\doc\kbproto\XKBproto-11.svg
-    share\doc\kbproto\XKBproto-2.svg
-    share\doc\kbproto\XKBproto-3.svg
-    share\doc\kbproto\XKBproto-4.svg
-    share\doc\kbproto\XKBproto-5.svg
-    share\doc\kbproto\XKBproto-6.svg
-    share\doc\kbproto\XKBproto-7.svg
-    share\doc\kbproto\XKBproto-8.svg
-    share\doc\kbproto\XKBproto-9.svg
-    share\doc\kbproto\acknowledgements.xml
-    share\doc\kbproto\appA.xml
-    share\doc\kbproto\appB.xml
-    share\doc\kbproto\appC.xml
-    share\doc\kbproto\appD.xml
-    share\doc\kbproto\ch01.xml
-    share\doc\kbproto\ch02.xml
-    share\doc\kbproto\ch03.xml
-    share\doc\kbproto\ch04.xml
-    share\doc\kbproto\ch05.xml
-    share\doc\kbproto\ch06.xml
-    share\doc\kbproto\ch07.xml
-    share\doc\kbproto\ch08.xml
-    share\doc\kbproto\ch09.xml
-    share\doc\kbproto\ch10.xml
-    share\doc\kbproto\ch11.xml
-    share\doc\kbproto\ch12.xml
-    share\doc\kbproto\ch13.xml
-    share\doc\kbproto\ch14.xml
-    share\doc\kbproto\ch15.xml
-    share\doc\kbproto\ch16.xml
-    share\doc\kbproto\xkbproto.xml
-    share\doc\recordproto\record.xml
-    share\doc\scrnsaverproto\saver.xml
-    share\doc\xcmiscproto\xc-misc.xml
-    share\doc\xextproto\appendix.xml
-    share\doc\xextproto\appgrp.xml
-    share\doc\xextproto\dbe.xml
-    share\doc\xextproto\dpms.xml
-    share\doc\xextproto\evi.xml
-    share\doc\xextproto\geproto.xml
-    share\doc\xextproto\lbx.xml
-    share\doc\xextproto\multibuf.xml
-    share\doc\xextproto\security.xml
-    share\doc\xextproto\shape.xml
-    share\doc\xextproto\shm.xml
-    share\doc\xextproto\sync.xml
-    share\doc\xextproto\tog-cup.xml
-    share\doc\xextproto\xtest.xml
-    share\doc\xorgproto\compositeproto.txt
-    share\doc\xorgproto\damageproto.txt
-    share\doc\xorgproto\dri2proto.txt
-    share\doc\xorgproto\dri3proto.txt
-    share\doc\xorgproto\fixesproto.txt
-    share\doc\xorgproto\presentproto.txt
-    share\doc\xorgproto\randrproto.txt
-    share\doc\xorgproto\renderproto.txt
-    share\doc\xorgproto\resproto.txt
-    share\doc\xorgproto\xv-protocol-v2.txt
-    share\doc\xorgproto\xwaylandproto.txt
-    share\doc\xproto\encoding.xml
-    share\doc\xproto\glossary.xml
-    share\doc\xproto\keysyms.xml
-    share\doc\xproto\sect1-9.xml
-    share\doc\xproto\x11protocol.xml
     share\pkgconfig\applewmproto.pc
     share\pkgconfig\bigreqsproto.pc
     share\pkgconfig\compositeproto.pc
@@ -229,7 +161,7 @@ for %%f in (
     share\pkgconfig\xwaylandproto.pc
 ) do (
     if not exist "%PREFIX%\Library\%%f" (
-        echo MISSING binary: %%f
+        echo MISSING file: %%f
         exit /b 1
     )
 )
